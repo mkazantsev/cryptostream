@@ -27,35 +27,35 @@ public class CryptoInputStream {
     }
 
     public CryptoInputStream(InputStream is,
-                      RSAPublicKey publicKey,
-                      RSAPrivateKey privateKey) {
+                             RSAPublicKey publicKey,
+                             RSAPrivateKey privateKey) {
         this.is = is;
         this.publicKey = publicKey;
         this.privateKey = privateKey;
     }
-    
+
     public byte[] read() throws IOException {
-		byte[] encb = new byte[CryptoSocket.keySize/8];
+        byte[] encb = new byte[CryptoSocket.keySize / 8];
         byte[] b;
-		int res = 0;
+        int res = 0;
         /*
 		while (res < keySize/8) {
 			res += is.read(encb, res, keySize/8-res);
 		}
 		*/
-		is.read(encb);
-		try {
-			Cipher cipher = Cipher.getInstance("RSA/ECB/NoPadding");
-			cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        is.read(encb);
+        try {
+            Cipher cipher = Cipher.getInstance("RSA/ECB/NoPadding");
+            cipher.init(Cipher.DECRYPT_MODE, privateKey);
             System.out.println("CryptoInputStream: Try to decrypt with ");
             System.out.println(privateKey);
-			b = cipher.doFinal(encb);
+            b = cipher.doFinal(encb);
             //System.out.println("CryptoInputStream: '" + new String(encb) + "'");
             return b;
-		} catch (Exception e) {
-			System.out.println("CryptoInputStream: Text is not decrypted");
-			e.printStackTrace();
-		}
+        } catch (Exception e) {
+            System.out.println("CryptoInputStream: Text is not decrypted");
+            e.printStackTrace();
+        }
         return null;
     }
 }

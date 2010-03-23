@@ -33,12 +33,12 @@ public class CryptoSocket {
         privateKey = null;
     }
 
-	public CryptoSocket(String address, int port) throws UnknownHostException,
+    public CryptoSocket(String address, int port) throws UnknownHostException,
             IOException {
-		this.sock = new Socket(address, port);
-		publicKey = null;
-		privateKey = null;
-	}
+        this.sock = new Socket(address, port);
+        publicKey = null;
+        privateKey = null;
+    }
 
     public void createKeys() throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGen = KeyPairGenerator.getInstance("RSA");
@@ -50,42 +50,42 @@ public class CryptoSocket {
 
     public void readPublicKey() throws IOException, NoSuchAlgorithmException, InvalidKeySpecException {
         if (sock.isConnected()) {
-			InputStream is = sock.getInputStream();
-			int res = 0;
-			byte[] buf = new byte[keySize];
+            InputStream is = sock.getInputStream();
+            int res = 0;
+            byte[] buf = new byte[keySize];
             /*
 			while (res < keySize) {
 				res += is.read(buf, res, keySize-res);
 			}
             */
             is.read(buf);
-			X509EncodedKeySpec pubSpec = new X509EncodedKeySpec(buf);
-			KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-			publicKey = (RSAPublicKey) keyFactory.generatePublic(pubSpec);
+            X509EncodedKeySpec pubSpec = new X509EncodedKeySpec(buf);
+            KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+            publicKey = (RSAPublicKey) keyFactory.generatePublic(pubSpec);
         } else {
             System.out.println("CryptoSocket: Can't read public key, Socket is not connected");
         }
     }
-    
-	public void writeKey() throws IOException {
-		if (sock.isConnected()) {
-			OutputStream os = sock.getOutputStream();
-			os.write(publicKey.getEncoded());
-			os.flush();
-		}
-	}
 
-    public CryptoOutputStream getCryptoOutputStream() throws IOException {
-		CryptoOutputStream cos = null;
-		cos = new CryptoOutputStream(sock.getOutputStream(), publicKey, privateKey);
-		return cos;
+    public void writeKey() throws IOException {
+        if (sock.isConnected()) {
+            OutputStream os = sock.getOutputStream();
+            os.write(publicKey.getEncoded());
+            os.flush();
+        }
     }
 
-	public CryptoInputStream getCryptoInputStream() throws IOException {
-		CryptoInputStream cis = null;
-		cis = new CryptoInputStream(sock.getInputStream(), publicKey, privateKey);
-		return cis;
-	}
+    public CryptoOutputStream getCryptoOutputStream() throws IOException {
+        CryptoOutputStream cos = null;
+        cos = new CryptoOutputStream(sock.getOutputStream(), publicKey, privateKey);
+        return cos;
+    }
+
+    public CryptoInputStream getCryptoInputStream() throws IOException {
+        CryptoInputStream cis = null;
+        cis = new CryptoInputStream(sock.getInputStream(), publicKey, privateKey);
+        return cis;
+    }
 
     public RSAPublicKey getPublicKey() {
         return publicKey;

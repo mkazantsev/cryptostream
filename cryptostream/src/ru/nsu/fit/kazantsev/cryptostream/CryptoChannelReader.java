@@ -11,26 +11,26 @@ import java.net.Socket;
  * To change this template use File | Settings | File Templates.
  */
 public class CryptoChannelReader {
-	public static void main(String[] args) {
-		Socket s;
-		CryptoSocket cs;
-		try {
-			ServerSocket ss = new ServerSocket(2112);
-			s = ss.accept();
-			cs = new CryptoSocket(s);
-			cs.createKeys();
+    public static void main(String[] args) {
+        Socket s;
+        CryptoSocket cs;
+        try {
+            ServerSocket ss = new ServerSocket(2112);
+            s = ss.accept();
+            cs = new CryptoSocket(s);
+            cs.createKeys();
             System.out.print("Public key: ");
-            System.out.println(cs.getPublicKey());          
-			cs.writeKey();
-			CryptoInputStream cis = cs.getCryptoInputStream();
+            System.out.println(cs.getPublicKey());
+            cs.writeKey();
+            CryptoInputStream cis = cs.getCryptoInputStream();
             System.out.println("Trying to read bytes from stream");
             byte[] buf = cis.read();
             System.out.println(buf);
             String out = new String(buf);
-			System.out.println("Message received: '" + out + "'");
-		} catch (Exception e) {
-			System.out.println("Reader failed");
-			e.printStackTrace();
-		}
-	}    
+            System.out.println("Message received: '" + out + "'");
+        } catch (Exception e) {
+            System.out.println("Reader failed");
+            e.printStackTrace();
+        }
+    }
 }

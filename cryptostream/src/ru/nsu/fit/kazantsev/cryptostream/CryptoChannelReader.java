@@ -3,13 +3,6 @@ package ru.nsu.fit.kazantsev.cryptostream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * Created by IntelliJ IDEA.
- * User: mkaz
- * Date: 23.03.2010
- * Time: 18:07:33
- * To change this template use File | Settings | File Templates.
- */
 public class CryptoChannelReader {
     public static void main(String[] args) {
         Socket s;
@@ -24,10 +17,15 @@ public class CryptoChannelReader {
             cs.writeKey();
             CryptoInputStream cis = cs.getCryptoInputStream();
             System.out.println("Trying to read bytes from stream");
+            while (cis.available() < 1) Thread.sleep(1);
+            while(cis.available() > 0) {
+                byte[] buf = cis.read();
+                String out = new String(buf);
+                System.out.println("Message received: '" + out + "'");
+            }
             byte[] buf = cis.read();
-            System.out.println(buf);
             String out = new String(buf);
-            System.out.println("Message received: '" + out + "'");
+            System.out.println("Message received: '" + out + "'");            
         } catch (Exception e) {
             System.out.println("Reader failed");
             e.printStackTrace();

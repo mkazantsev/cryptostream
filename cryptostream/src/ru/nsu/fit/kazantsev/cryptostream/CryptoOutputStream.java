@@ -6,15 +6,8 @@ import java.io.OutputStream;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
-/**
- * Created by IntelliJ IDEA.
- * User: mkaz
- * Date: 23.03.2010
- * Time: 17:58:55
- * To change this template use File | Settings | File Templates.
- */
 public class CryptoOutputStream {
-    private int[] buffer;
+    private byte[] buffer;
     private OutputStream os;
     private RSAPublicKey publicKey;
     private RSAPrivateKey privateKey;
@@ -35,8 +28,9 @@ public class CryptoOutputStream {
         System.out.println(privateKey);
     }
 
-    public void write(byte[] b) throws IOException {
+    public void write128(byte[] b) throws IOException {
         byte[] encb = null;
+        buffer = b;
         try {
             Cipher cipher = Cipher.getInstance("RSA/ECB/NoPadding");
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
@@ -47,12 +41,28 @@ public class CryptoOutputStream {
             System.out.println("Text is not encrypted");
             e.printStackTrace();
         }
-        System.out.println("CryptoOutputStream: writing " + encb.length + " bytes to stream");
         if (encb != null) {
             os.write(encb);
             os.flush();
         }
-        //System.out.println("CryptoOutputStream: sent message '" + new String(encb) + "'");
-        System.out.println("CryptoOutputStream: wrote " + encb.length + " bytes to stream");
+    }
+
+    public void write(byte[] b) throws IOException {
+        int res = b.length;
+        int offset = 0;
+        byte[] buf = new byte[CryptoSocket.keySize / 8];
+        while (res > CryptoSocket.keySize / 8) {
+            for (int i = 0; i < CryptoSocket.keySize / 8; i++)
+                buf[i] = b[i + offset];
+            write128(buf);
+            res -= CryptoSocket.keySize / 8;
+            offset += CryptoSocket.keySize / 8;
+        }
+        int i = 0;
+        for (i = 0; i < res; i++)
+            buf[i] = b[i + offset];
+        for (int j = i; j < CryptoSocket.keySize/8; j++)
+            buf[j] = 0;
+        write128(buf);
     }
 }

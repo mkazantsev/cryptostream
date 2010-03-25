@@ -1,12 +1,5 @@
 package ru.nsu.fit.kazantsev.cryptostream;
 
-/**
- * Created by IntelliJ IDEA.
- * User: mkaz
- * Date: 23.03.2010
- * Time: 18:03:33
- * To change this template use File | Settings | File Templates.
- */
 public class CryptoChannelSender {
     public static void main(String[] args) {
         CryptoSocket cs;

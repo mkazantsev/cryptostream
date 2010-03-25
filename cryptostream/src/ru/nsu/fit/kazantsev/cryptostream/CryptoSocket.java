@@ -14,13 +14,6 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.X509EncodedKeySpec;
 
-/**
- * Created by IntelliJ IDEA.
- * User: mkaz
- * Date: 23.03.2010
- * Time: 17:19:31
- * To change this template use File | Settings | File Templates.
- */
 public class CryptoSocket {
     public static int keySize = 1024;
     private RSAPublicKey publicKey;

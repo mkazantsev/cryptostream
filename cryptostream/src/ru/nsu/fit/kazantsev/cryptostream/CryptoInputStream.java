@@ -8,13 +8,6 @@ import java.io.InputStream;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
-/**
- * Created by IntelliJ IDEA.
- * User: mkaz
- * Date: 23.03.2010
- * Time: 17:51:36
- * To change this template use File | Settings | File Templates.
- */
 public class CryptoInputStream {
     private InputStream is;
     private RSAPublicKey publicKey;
@@ -47,8 +40,8 @@ public class CryptoInputStream {
         try {
             Cipher cipher = Cipher.getInstance("RSA/ECB/NoPadding");
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
-            System.out.println("CryptoInputStream: Try to decrypt with ");
-            System.out.println(privateKey);
+            //System.out.println("CryptoInputStream: Try to decrypt with ");
+            //System.out.println(privateKey);
             b = cipher.doFinal(encb);
             //System.out.println("CryptoInputStream: '" + new String(encb) + "'");
             return b;
@@ -57,5 +50,9 @@ public class CryptoInputStream {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public int available() throws IOException {
+        return is.available();
     }
 }

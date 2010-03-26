@@ -83,4 +83,8 @@ public class CryptoSocket {
     public RSAPublicKey getPublicKey() {
         return publicKey;
     }
+
+    public void close() throws IOException {
+        sock.close();
+    }
 }

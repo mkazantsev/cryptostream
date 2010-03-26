@@ -63,7 +63,7 @@
       <file leaf-file-name="CryptoSocket.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoSocket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
+            <state line="86" column="42" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,10 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CryptoOutputStream.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CryptoOutputStream.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoOutputStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="-0.44864866">
+            <state line="9" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,16 +96,18 @@
       <file leaf-file-name="CryptoChannelSender.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="32" column="22" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CryptoChannelReader.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CryptoChannelReader.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
+            <state line="50" column="31" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.5885714">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,11 +125,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoOutputStream.java" />
+        <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoInputStream.java" />
+        <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoSocket.java" />
         <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelSender.java" />
         <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelReader.java" />
-        <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoOutputStream.java" />
-        <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoSocket.java" />
-        <option value="$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoInputStream.java" />
       </list>
     </option>
   </component>
@@ -404,7 +406,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6594684" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32890365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32890365" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -445,31 +447,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="253" selection-end="253" vertical-scroll-proportion="0.0">
@@ -481,7 +458,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="222" selection-end="222" vertical-scroll-proportion="-0.44864866">
+        <state line="9" column="27" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="42" selection-start="2921" selection-end="2921" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="22" selection-start="1653" selection-end="1653" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nsu/fit/kazantsev/cryptostream/CryptoChannelReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="31" selection-start="1997" selection-end="1997" vertical-scroll-proportion="0.5885714">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

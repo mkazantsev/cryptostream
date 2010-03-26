@@ -1,5 +1,8 @@
 package ru.nsu.fit.kazantsev.cryptostream;
 
+import java.io.OutputStream;
+import java.net.Socket;
+
 public class CryptoChannelSender {
     public static void main(String[] args) {
         CryptoSocket cs;
@@ -20,6 +23,14 @@ public class CryptoChannelSender {
                     "MessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessage" +
                     "MessageMessageMessageMessageMessageMessageMessageMessageMessageMessageMessage";
             cos.write(text.getBytes());
+            cs.close();
+
+            Socket s = new Socket("127.0.0.1", 2112);
+            System.out.println("Connected");
+            OutputStream os = s.getOutputStream();
+            System.out.println("Writing text");
+            os.write(text.getBytes());
+            s.close();
         } catch (Exception e) {
             System.out.println("Sender failed");
             e.printStackTrace();
